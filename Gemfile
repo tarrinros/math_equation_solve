@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'devise-jwt'
+gem 'devise-jwt', '~> 0.5.9'
 gem 'devise'
 
 group :development, :test do
