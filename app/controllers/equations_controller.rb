@@ -14,7 +14,7 @@ class EquationsController < ApplicationController
   private
 
   def set_equation
-    @equation = Equation.find_by(params[:id])
+    @equation = Equation.find(params[:id])
   end
 
   def set_current_user
