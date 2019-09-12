@@ -1,0 +1,10 @@
+<h4>
+  <%= @equation.form %>
+</h4>
+
+<div>
+  <%= number_field(:product, :price) %>x2+<%= number_field(:product, :price) %>x+<%= number_field(:product, :price) %> = 0
+  <%= submit_tag("Solve") %>
+</div>
+
+<!--ax**2 + bx + c = 0-->
