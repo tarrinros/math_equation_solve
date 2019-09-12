@@ -1,6 +1,4 @@
 <div class="container">
   <h3>Please, choose the type of equation to solve</h3>
-  <% @equations.each do |equation| %>
-      <%= link_to equation.title, equation_path(equation), class: 'btn btn-info' %>
-  <% end %>
+  <%= render partial: 'equations/equation', collection: @equations %>
 </div>
