@@ -26,8 +26,13 @@ RSpec.describe 'POST /login', type: :request do
     end
 
     it 'returns valid JWT token' do
-      decoded_token = decoded_jwt_token_from_response(response)
+      decoded_token = decode_token(response.headers['Authorization'])
       expect(decoded_token.first['sub']).to be_present
+    end
+
+
+    def decode_token(token)
+      JWT.decode(token.split(" ")[1], ENV['DEVISE_JWT_SECRET_KEY'])
     end
   end
 
