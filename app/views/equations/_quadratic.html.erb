@@ -2,14 +2,14 @@
   <%= @equation.form %>
 </h4>
 
-<div>
-  <%= number_field(:product, :price) %>x2+<%= number_field(:product, :price) %>x+<%= number_field(:product, :price) %> = 0
-  <%= submit_tag("Solve") %>
-</div>
+<!--<div>-->
+<!--  <%#= number_field(:product, :price) %><%= number_field(:product, :price) %><%= number_field(:product, :price) %> = 0-->
+  <%#= submit_tag("Solve") %>
+<!--</div>-->
 
 <%= simple_form_for(@equation, html: { class: 'form-inline' }) do |f| %>
-  <%= f.input :form, label: 'A' %>
-  <%= f.input :title, label: 'B' %>
+  <%= f.input :form, label: 'A' %>x2+
+  <%= f.input :title, label: 'B' %>x+C = 0
   <%#= f.input :c, placeholder: 'C' %>
   <%= f.submit 'Solve' %>
 <% end %>
