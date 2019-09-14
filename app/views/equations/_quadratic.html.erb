@@ -8,8 +8,8 @@
 <!--</div>-->
 
 <%= simple_form_for(@equation, html: { class: 'form-inline' }) do |f| %>
-  <%= f.input :a, as: :numeric,  label: 'A' %>x2+
-  <%= f.input :b, as: :numeric, label: 'B' %>x+C = 0
+  <%= f.input :title, as: :numeric,  label: 'A' %>x2+
+  <%= f.input :form, as: :numeric, label: 'B' %>x+C = 0
   <%#= f.input :c, placeholder: 'C' %>
   <%= f.submit 'Solve' %>
 <% end %>
