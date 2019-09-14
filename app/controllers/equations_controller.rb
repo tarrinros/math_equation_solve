@@ -9,6 +9,8 @@ class EquationsController < ApplicationController
 
   def show; end
 
+  def solve; end
+
   def result; end
 
   private

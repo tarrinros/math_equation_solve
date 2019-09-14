@@ -1,10 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe "Equations", type: :request do
-  describe "GET /equations" do
-    it "works! (now write some real specs)" do
+RSpec.describe 'Equations', type: :request do
+  let(:user) { FactoryBot.create :user }
+  let(:equation) { FactoryBot.create :equation }
+
+  describe 'request list of all equations' do
+    it 'responds successfully' do
       get equations_path
-      expect(response).to have_http_status(200)
+      expect(response).to be_successful
+      expect(response.body).to include('Please, choose the type of equation to solve')
     end
   end
 end
