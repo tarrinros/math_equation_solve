@@ -2,12 +2,7 @@
   <%= @equation.form %>
 </h4>
 
-<!--<div>-->
-<!--  <%#= number_field(:product, :price) %><%= number_field(:product, :price) %><%= number_field(:product, :price) %> = 0-->
-  <%#= submit_tag("Solve") %>
-<!--</div>-->
-
-<%= simple_form_for(equation_solve_path, class: 'form-inline') do |f| %>
+<%= simple_form_for(equation_result_path, class: 'form-inline') do |f| %>
   <%= f.input :a, as: :numeric, label: false, placeholder: 'A', class: 'form-inline' %>
   <%= f.input :b, as: :numeric, label: false, placeholder: 'B' , class: 'form-inline' %>
   <%= f.input :c, as: :numeric, label: false, placeholder: 'C' , class: 'form-inline' %>
