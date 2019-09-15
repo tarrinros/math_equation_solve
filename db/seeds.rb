@@ -6,5 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Equation.create(title: 'linear', form: 'y = mx + b')
+Equation.create(title: 'linear', form: 'ax + bx - c = d')
 Equation.create(title: 'quadratic', form: 'ax**2 + bx + c = 0')
