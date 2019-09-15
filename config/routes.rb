@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :equations, only: [:index, :show]
   resources :users, only: [:show]
 
-  post 'equations/solve' => 'equation#solve', as: :equation_solve
-  get 'equations/result' => 'equation#result', as: :equation_result
+  post 'equations/solve' => 'equations#solve', as: :equation_solve
+  get 'equations/result' => 'equations#result', as: :equation_result
 end

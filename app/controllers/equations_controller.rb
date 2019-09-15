@@ -8,12 +8,11 @@ class EquationsController < ApplicationController
   end
 
   def show
-    @equation_form = EquationForm.new
+    @equation_solver = QuadraticEquationSolver.new({})
   end
 
   def solve
-    valid_equation_params = EquationForm.new(equation_params)
-    @result = QuadraticEquationSolver.call(valid_equation_params)
+    @result = QuadraticEquationSolver.new(equation_params).process
     render action: 'result'
   end
 

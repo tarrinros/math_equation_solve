@@ -11,4 +11,10 @@ RSpec.describe 'Equations', type: :request do
       expect(response.body).to include('Please, choose the type of equation to solve')
     end
   end
+
+  describe 'POST /solve' do
+    it 'does not raise an error' do
+      expect { post equation_solve_path }.to_not raise_error
+    end
+  end
 end
