@@ -8,15 +8,14 @@ class EquationsController < ApplicationController
   end
 
   def show
-    @equation_solver = EquationSolver.new({a: '2', b: '3', c: '4'})
+    @equation_form = EquationForm.new
   end
 
   def solve
+    params = equation_params
     @result = QuadraticEquationSolver.new(equation_params).process
-    render action: 'result'
+    render json: {result: @result}
   end
-
-  def result; end
 
   private
 
@@ -29,6 +28,6 @@ class EquationsController < ApplicationController
   end
 
   def equation_params
-    params.require(:equation).permit(:title, :a, :b, :c)
+    params.require(:equation_form).permit(:title, :a, :b, :c)
   end
 end
