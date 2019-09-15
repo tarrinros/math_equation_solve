@@ -12,7 +12,7 @@
 
 <div class="row mt-1 mb-1">
   <div class="col">
-    <%= simple_form_for(@equation_solver,:url => equation_solve_path, :method => :post, class: 'form-inline') do |f| %>
+    <%= simple_form_for(@equation_form,:url => equation_solve_path, :method => :post, class: 'form-inline') do |f| %>
       <%= f.hidden_field :title, value: @equation.title %>
       <%= f.input :a, as: :numeric, label: false, placeholder: 'A', class: 'form-inline' %>
       <%= f.input :b, as: :numeric, label: false, placeholder: 'B' , class: 'form-inline' %>

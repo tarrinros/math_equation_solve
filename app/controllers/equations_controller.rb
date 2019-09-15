@@ -8,7 +8,7 @@ class EquationsController < ApplicationController
   end
 
   def show
-    @equation_solver = QuadraticEquationSolver.new({})
+    @equation_solver = EquationSolver.new({a: '2', b: '3', c: '4'})
   end
 
   def solve
