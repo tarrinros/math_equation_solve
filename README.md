@@ -1,24 +1,29 @@
-# README
+# Online equation solver
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple solver for linear and quadratic equations.
 
-Things you may want to cover:
+### Requirements
 
-* Ruby version
+`ruby >= 2.3.0`
 
-* System dependencies
+`rails ~> 5.2.0`
 
-* Configuration
+### Installation & using
 
-* Database creation
+In `terminal` or `cmd`
 
-* Database initialization
+- `$ git clone repository_link`
 
-* How to run the test suite
+- `$ gem install bundler` - if needed
 
-* Services (job queues, cache servers, search engines, etc.)
+- `$ bundle install`
 
-* Deployment instructions
+- `$ bin/rails db:create`
 
-* ...
+- `$ bin/rails db:migrate`
+
+- `$ bin/rails db:seed`
+
+- `$ rails s` for server starting
+
+Then open `http://localhost:3000` at your web-browser
