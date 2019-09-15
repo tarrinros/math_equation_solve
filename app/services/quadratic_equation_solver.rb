@@ -6,16 +6,14 @@ class QuadraticEquationSolver < ApplicationService
   def initialize(factors)
     factors = JSON(factors)
     @a = factors.fetch('a')
-
-    raise ArgumentError, 'Not a quadratic equation. a = 0' if a.zero?
-
     @b = factors.fetch('b')
     @c = factors.fetch('c')
   end
 
   def call
+    return {text: 'Not a quadratic equation. a = 0'}.to_json if a.zero?
     x1, x2 = solve
-    result(x1, x2)
+    result(x1, x2).to_json
   end
 
   private
@@ -32,10 +30,10 @@ class QuadraticEquationSolver < ApplicationService
   end
 
   def simple_result
-    %|
-    Roots are real and same
-    x = #{(-b / 2 / a)}
-    |
+    {
+      text: 'Roots are real and same',
+      x: "#{(-b / 2 / a)}"
+    }
   end
 
   def roots(sqrt_value)
@@ -51,17 +49,17 @@ class QuadraticEquationSolver < ApplicationService
 
   def result(x1, x2)
     if (discriminant > 0)
-      return %|
-      Roots are real and different
-      x1 = #{x1.join(',')}
-      x2 = #{x2.join(',')}
-      |
+      return {
+        text: 'Roots are real and different',
+        x1: "#{x1.join(',')}",
+        x2: "#{x2.join(',')}"
+      }
     end
 
-    %|
-    Roots are complex
-    x1 = #{x1.join(',')}
-    x2 = #{x2.join(',')}
-    |
+    {
+      text: 'Roots are complex',
+      x1: "#{x1.join(',')}",
+      x2: "#{x2.join(',')}"
+    }
   end
 end
