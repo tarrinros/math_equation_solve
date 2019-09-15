@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   root 'equations#index'
 
-  resources :equations
+  resources :equations, only: [:index, :show]
   resources :users, only: [:show]
+
+  post 'equations/:id/solve' => 'equation#solve', as: :equation_solve
+  get 'equations/:id/result' => 'equation#result', as: :equation_result
 end

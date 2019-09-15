@@ -1,6 +1,6 @@
 require 'cmath'
 
-class QuadraticEquationSolver
+class QuadraticEquationSolver < ApplicationService
   attr_reader :a, :b, :c
 
   def initialize(factors)
@@ -13,7 +13,7 @@ class QuadraticEquationSolver
     @c = factors.fetch('c')
   end
 
-  def process
+  def call
     x1, x2 = solve
     result(x1, x2)
   end
@@ -65,9 +65,3 @@ class QuadraticEquationSolver
     |
   end
 end
-
-factors = {a: 2, b: 4, c: -30}.to_json
-
-equation = QuadraticEquationSolver.new(factors)
-
-puts equation.process

@@ -7,11 +7,16 @@ class EquationsController < ApplicationController
     @equations = Equation.all
   end
 
-  def show; end
+  def show
+    @equation_form = EquationForm.new
+  end
 
   def solve; end
 
-  def result; end
+  def result
+    # input = {a: 2, b: 4, c: -30}.to_json
+    @result = QuadraticEquationSolver.call(equation_params)
+  end
 
   private
 
@@ -24,6 +29,6 @@ class EquationsController < ApplicationController
   end
 
   def equation_params
-    params.require(:equation).permit(:type)
+    params.require(:equation).permit(:a, :b, :c)
   end
 end

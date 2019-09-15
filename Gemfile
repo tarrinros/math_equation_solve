@@ -5,9 +5,9 @@ ruby '2.6.2'
 
 gem 'awesome_rails_console'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'bootstrap', '~> 4.2.1'
+gem 'bootstrap', '>= 4.3.1'
 gem 'coffee-rails', '~> 4.2'
-gem 'devise'
+gem 'devise', '>= 4.7.1'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'puma', '~> 3.11'
@@ -17,6 +17,7 @@ gem 'sqlite3'
 gem 'simple_form'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'virtus'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

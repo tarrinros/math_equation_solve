@@ -7,11 +7,11 @@
   <%#= submit_tag("Solve") %>
 <!--</div>-->
 
-<%= simple_form_for(@equation, html: { class: 'form-inline' }) do |f| %>
-  <%= f.input :title, as: :numeric,  label: 'A' %>x2+
-  <%= f.input :form, as: :numeric, label: 'B' %>x+C = 0
-  <%#= f.input :c, placeholder: 'C' %>
-  <%= f.submit 'Solve' %>
+<%= simple_form_for(equation_solve_path, class: 'form-inline') do |f| %>
+  <%= f.input :a, as: :numeric, label: false, placeholder: 'A', class: 'form-inline' %>
+  <%= f.input :b, as: :numeric, label: false, placeholder: 'B' , class: 'form-inline' %>
+  <%= f.input :c, as: :numeric, label: false, placeholder: 'C' , class: 'form-inline' %>
+  <%= f.submit 'Solve', class: 'btn btn-success btn-block' %>
 <% end %>
 
 <!--ax**2 + bx + c = 0-->
