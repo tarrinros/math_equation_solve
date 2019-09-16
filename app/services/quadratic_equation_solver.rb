@@ -12,7 +12,7 @@ class QuadraticEquationSolver < ApplicationService
   def call
     return {text: 'Not a quadratic equation. a = 0'}.to_json if a.zero?
     x1, x2 = solve
-    result(x1, x2).to_json
+    result(x1, x2)
   end
 
   private
