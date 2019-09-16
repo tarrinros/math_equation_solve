@@ -1,12 +1,7 @@
-<div >
-  <div class="col">
-    <div class="alert alert-info">
-      <%# byebug %>
-      <% @result.each_value do |value| %>
-        <li>
-          <%= value %>
-        </li>
-      <% end %>
-    </div>
-  </div>
+<div class="alert alert-info">
+  <% @result.each_value do |value| %>
+    <li>
+      <%= value %>
+    </li>
+  <% end %>
 </div>

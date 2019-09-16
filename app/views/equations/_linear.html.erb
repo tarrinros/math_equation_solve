@@ -1,29 +1,32 @@
-  <div class="row mt-1 mb-1">
-    <div class="col">
-      please enter you linear equation
-    </div>
+<div class="row mt-2 mb-2">
+  <div class="col">
+    <%= @equation.form %>
   </div>
+</div>
 
-  <div class="row mt-1 mb-1">
-    <div class="col">
-      <%= @equation.form %>
-    </div>
+<div class="row mt-1 mb-1">
+  <div class="col">
+    please enter you linear equation
   </div>
+</div>
 
-  <div class="row mt-1 mb-1">
-    <div class="col">
-      <%= simple_form_for(@equation_form,:url => equation_solve_path(format: :json), remote: true, :method => :post, class: 'form-inline') do |f| %>
-        <%= f.hidden_field :title, value: @equation.title %>
-        <%= f.input :a, as: :numeric, label: false, placeholder: 'A', class: 'form-inline' %>
-        <%= f.input :b, as: :numeric, label: false, placeholder: 'B' , class: 'form-inline' %>
-        <%= f.input :c, as: :numeric, label: false, placeholder: 'C' , class: 'form-inline' %>
-        <%= f.submit 'Solve', class: 'btn btn-success btn-block' %>
-      <% end %>
-    </div>
+<div class="row mt-1 mb-1">
+  <div class="col">
+    <%= simple_form_for(@equation_form,:url => equation_solve_path, remote: true, :method => :post, class: 'form-inline') do |f| %>
+      <%= f.hidden_field :title, value: @equation.title %>
+      <%= f.input :a, as: :numeric, label: false, placeholder: 'A', class: 'form-inline' %>
+      <%= f.input :b, as: :numeric, label: false, placeholder: 'B' , class: 'form-inline' %>
+      <%= f.input :c, as: :numeric, label: false, placeholder: 'C' , class: 'form-inline' %>
+      <%= f.submit 'Solve', class: 'btn btn-success btn-block' %>
+    <% end %>
   </div>
+</div>
 
-  <div class="row mt-1 mb-1">
-    <div class="col">
-      <%= link_to 'Back', root_path, class: 'btn btn-outline-danger btn-block' %>
-    </div>
+<div class="row mt-1 mb-1">
+  <div class="col">
+    <%= link_to 'Back', root_path, class: 'btn btn-outline-danger btn-block' %>
   </div>
+</div>
+
+<div id="eq-result">
+</div>

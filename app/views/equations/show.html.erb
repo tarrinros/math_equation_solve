@@ -1,7 +1,11 @@
 <div class="container">
-  <h3>
-    <%= @equation.title.capitalize %>
-  </h3>
+  <div class="row mt-2">
+    <div class="col">
+      <h3>
+        <%= @equation.title.capitalize %>
+      </h3>
+    </div>
+  </div>
   <h4>
     <%= render partial: @equation.title %>
   </h4>

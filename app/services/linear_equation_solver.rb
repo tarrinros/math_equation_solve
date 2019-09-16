@@ -1,6 +1,5 @@
 require 'matrix'
 require_relative 'linear_equation_parser'
-require 'byebug'
 
 class LinearEquation
   include LinearEquationParser < ApplicationService
@@ -9,7 +8,7 @@ class LinearEquation
   attr_reader :operations
 
   def initialize(factors, vars=nil)
-    @factors = factors[]
+    @a = factors[]
     @constant = nil
     @variables = nil
   end
@@ -40,3 +39,5 @@ class LinearEquation
       join
   end
 end
+
+# ax + b = c

@@ -10,7 +10,7 @@ class QuadraticEquationSolver < ApplicationService
   end
 
   def call
-    return {text: 'Not a quadratic equation. a = 0'}.to_json if a.zero?
+    return {text: 'Not a quadratic equation. a = 0'} if a.zero?
     x1, x2 = solve
     result(x1, x2)
   end
@@ -25,7 +25,7 @@ class QuadraticEquationSolver < ApplicationService
   end
 
   def discriminant
-    @discriminant ||= b ** 2 - 4 * a * c
+    @discriminant ||= b**2 - 4 * a * c
   end
 
   def simple_result

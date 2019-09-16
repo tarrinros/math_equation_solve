@@ -15,7 +15,6 @@ gem 'rails', '~> 5.2.3'
 gem 'sass-rails', '~> 5.0'
 gem 'shallow_attributes'
 gem 'simple_form'
-gem 'sqlite3'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
@@ -23,6 +22,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.8'
+  gem 'sqlite3', '~> 1.3.6'
 end
 
 group :test do
