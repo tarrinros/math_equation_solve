@@ -11,10 +11,29 @@ class EquationsController < ApplicationController
     @equation_form = EquationForm.new
   end
 
+  # Validates incoming params
+  # Transforms values to float
+  # Depends on title_key sends to Solver
   def solve
-    params = equation_params
-    @result = QuadraticEquationSolver.new(equation_params).process
-    render json: {result: @result}
+    respond_to do |format|
+      if EquationForm.new(equation_params).valid?
+        params = equation_params.transform_values(&:to_f)
+        @result = if equation_params.value?('linear')
+                    LinearEquationSolver.call(params)
+                  else
+                    QuadraticEquationSolver.call(params)
+                  end
+
+        format.js { render partial: 'result' }
+        render json: @result
+        # render json: { result: @result }
+
+        # format.html { render :show, notice: 'User was successfully updated.' }
+        # format.json { render :show, status: :ok, location: @result }
+      else
+        render 'equations/show', alert: 'Wrong factors format'
+      end
+    end
   end
 
   private

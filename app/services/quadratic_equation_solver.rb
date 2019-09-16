@@ -4,7 +4,6 @@ class QuadraticEquationSolver < ApplicationService
   attr_reader :a, :b, :c
 
   def initialize(factors)
-    factors = JSON(factors)
     @a = factors.fetch('a')
     @b = factors.fetch('b')
     @c = factors.fetch('c')
