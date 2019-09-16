@@ -1,5 +1,4 @@
 require 'matrix'
-require_relative 'linear_equation_parser'
 
 class LinearEquation
   include LinearEquationParser < ApplicationService
