@@ -24,6 +24,7 @@ class EquationsController < ApplicationController
                 end
       respond_to do |format|
         format.js { render partial: 'eq-result' }
+        format.json { render json: {result: @result} }
       end
     else
       render 'equations/show', alert: 'Wrong factors format'
