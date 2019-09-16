@@ -1,8 +1,6 @@
 require 'matrix'
 
-class LinearEquation
-  include LinearEquationParser < ApplicationService
-
+class LinearEquation < ApplicationService
   attr_accessor :coefficients, :constant, :variables
   attr_reader :operations
 
