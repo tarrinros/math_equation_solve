@@ -24,7 +24,7 @@ class LinearEquationSolver < ApplicationService
     result = (c + b) / a
     return {
       text: 'Solution:',
-      x: "#{result}"
+      x: "x = #{result}"
     }
   end
 end
