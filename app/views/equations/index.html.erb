@@ -1,4 +1,9 @@
-<div class="center-block text-center">
+<div class="row justify-content-center mt-4">
   <h4>Please, choose the type of equation to solve</h4>
 </div>
-  <%= render partial: 'equations/equation', collection: @equations %>
+<div class="container-fluid">
+  <div class="row mt-4 mb-4">
+    <%= render partial: 'equations/equation', collection: @equations %>
+  </div>
+</div>
+
