@@ -1,0 +1,38 @@
+//@include media-breakpoint-up(sm) {
+//  .display-1-resp {
+//    font-size: $display1-size * 0.8;
+//    font-weight: $display1-weight * 0.5;
+//    line-height: $display-line-height * 0.8;
+//  }
+//  .display-2-resp {
+//    font-size: $display2-size * 0.8;
+//    font-weight: $display1-weight;
+//    line-height: $display-line-height * 0.8;
+//  }
+//  .display-3-resp {
+//    font-size: $display3-size * 0.8;
+//    font-weight: $display2-weight;
+//    line-height: $display-line-height * 0.8;
+//  }
+//  .display-4-resp {
+//    font-size: 200%;
+//  }
+//}
+
+@include media-breakpoint-between(xs, md) {
+  .display-3-resp {
+    font-size: 300%;
+  }
+  .display-4-resp {
+    font-size: 200%;
+  }
+}
+
+@include media-breakpoint-between(lg, xl) {
+  .display-3-resp {
+    font-size: 200%;
+  }
+  .display-4-resp {
+    font-size: 100%;
+  }
+}

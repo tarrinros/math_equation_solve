@@ -11,3 +11,39 @@
  * It is generally better to create a new file per style scope.
  */
  @import "bootstrap";
+ @import "font-awesome";
+ @import "my_media_querries";
+ @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: Poppins, Sans-Serif;
+  color: #222;
+}
+
+.navbar {
+  padding: .8rem;
+}
+
+.navbar-nav li {
+  padding: .3rem;
+}
+
+.navbar-nav .btn {
+  font-size: 20px;
+  border-radius: unset;
+}
+
+// Media queries
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+
+}
