@@ -20,11 +20,24 @@
 //}
 
 @include media-breakpoint-between(xs, md) {
+  .app_icon {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .display-1-resp {
+    font-size: 250%;
+  }
+
+  .display-2-resp {
+    font-size: 250%;
+  }
+
   .display-3-resp {
     font-size: 300%;
   }
   .display-4-resp {
-    font-size: 200%;
+    font-size: 130%;
   }
 }
 
